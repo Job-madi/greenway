@@ -1,3 +1,8 @@
+/* the code starts from this screen. This screen has static elements and two buttons. The buttons navigate to routescreen
+* and aqiscreen respectively*/
+
+
+
 import 'package:flutter/material.dart';
 import 'routescreen.dart';
 import 'aqiscreen.dart';
@@ -35,7 +40,7 @@ void main()=> runApp(MyApp());
                     context,
                     MaterialPageRoute(
 
-                     // builder: (context) => routescreen(),
+                     builder: (context) => RouteScreen(),
                     ),
                   );
                 },

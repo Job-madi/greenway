@@ -13,7 +13,7 @@ class aqiscreen extends StatefulWidget {
 class _aqiscreenState extends State<aqiscreen> {
   //String _key = 'de113a567839c4ae761b35831192453ae5f57551';
   AirQuality airQuality =
-      new AirQuality('de113a567839c4ae761b35831192453ae5f57551');
+      new AirQuality('--API--KEY-- airq');
   @override
   void initState() {
     super.initState();

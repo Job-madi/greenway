@@ -56,7 +56,7 @@ class _aqiscreenState extends State<aqiscreen> {
               padding: EdgeInsets.all(20.0),
               child: GooglePlaceAutoCompleteTextField(
                   textEditingController: _controller,
-                  googleAPIKey: "AIzaSyDyCqyYlxIkhhtDAzoCgwqlfkVTwGYDIo4",
+                  googleAPIKey: "---API--KEY---",
                   inputDecoration: InputDecoration(
                     //hoverColor: Colors.black,
                     filled: true,

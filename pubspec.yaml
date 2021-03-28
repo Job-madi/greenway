@@ -31,6 +31,8 @@ dependencies:
   google_places_flutter: ^2.0.3
   dio: ^3.0.10
   air_quality: ^1.2.1+1
+  google_maps_flutter:
+  google_map_polyline:
 
 dev_dependencies:
   flutter_test:

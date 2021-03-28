@@ -28,38 +28,78 @@ void main()=> runApp(MyApp());
       @override
       Widget build(BuildContext context) {
         return Scaffold(
-          body: Container(
-            child: Column(
-              children: <Widget>[
-                CircleAvatar(
-                  backgroundImage: NetworkImage("https://i.ibb.co/fCD64JQ/Untitled-design-4.png"),
-                ),
-                Image.network("https://i.ibb.co/nnMZ6Jw/1616863866247.png"),
-                MaterialButton(onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
+          body: SafeArea(
+            child: Container(
 
-                     builder: (context) => RouteScreen(),
+              color: Color(0xFFffbd59),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  CircleAvatar(
+                    backgroundImage: NetworkImage("https://i.ibb.co/fCD64JQ/Untitled-design-4.png"),
+                    radius: 40,
+
+                  ),
+                  Image.network("https://i.ibb.co/nnMZ6Jw/1616863866247.png"),
+                  MaterialButton(
+                    elevation: 0.0,
+                    child: Text("Find best route",
+                      style: TextStyle(
+                          fontSize: 20.0,
+                          color: Colors.white
+                      ),),
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+
+                            builder: (context) => RouteScreen()
+                        ),
+                      );
+                    },
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(35.0),
+                      side: BorderSide(color: Colors.white, width: 2.5),
+
                     ),
-                  );
-                },
-                  height: 50, minWidth: 200,
+                    height: 60,
+                    minWidth: 250,
 
-                ),
-                MaterialButton(onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
 
-                      // builder: (context) => aqiscreen(),
+                    color: Colors.black.withOpacity(0.0),
+
+                  ),
+                  MaterialButton(
+                    elevation: 0.0,
+                    child: Text("AQI around the world",
+                      style: TextStyle(
+                          fontSize: 20.0,
+                          color: Colors.white
+                      ),),
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+
+                            builder: (context) => aqiscreen()
+                        ),
+                      );
+                    },
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(35.0),
+                      side: BorderSide(color: Colors.white, width: 2.5),
+
                     ),
-                  );
-                },
-                  height: 50, minWidth: 200,
-                ),
-                Image.network("https://i.ibb.co/nnMZ6Jw/1616863866247.png"),
-              ],
+                    height: 60,
+                    minWidth: 250,
+
+
+                    color: Colors.black.withOpacity(0.0),
+
+                  ),
+                  Image.network("https://i.ibb.co/6wfmfN8/1616863894612.png", height: 250),
+                ],
+              ),
             ),
           ),
         );

@@ -6,12 +6,12 @@ import 'package:google_places_flutter/model/prediction.dart';
 import 'package:air_quality/air_quality.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
-class aqiscreen extends StatefulWidget {
+class Aqiscreen extends StatefulWidget {
   @override
-  _aqiscreenState createState() => _aqiscreenState();
+  _AqiscreenState createState() => _AqiscreenState();
 }
 
-class _aqiscreenState extends State<aqiscreen> {
+class _AqiscreenState extends State<Aqiscreen> {
  // String _key = 'de113a567839c4ae761b35831192453ae5f57551';
   AirQuality airQuality;
 

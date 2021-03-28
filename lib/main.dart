@@ -81,7 +81,7 @@ void main()=> runApp(MyApp());
                         context,
                         MaterialPageRoute(
 
-                            builder: (context) => aqiscreen()
+                            builder: (context) => Aqiscreen()
                         ),
                       );
                     },

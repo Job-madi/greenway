@@ -9,6 +9,8 @@ VS-Code<br>
 Google Cloud Platform<br>
 aqicn.org API<br>
 Youtube tutorials<br>
+Canva<br>
+PicsArt<br>
 
 ## Inspiration
 We've several map apps that lets us know the shortest routes between 2 points based on geolocation and traffic. But do we have an app that lets us know the cleanest and least polluted route? No until yet. That's what we've countered in our project.

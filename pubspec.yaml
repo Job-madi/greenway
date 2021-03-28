@@ -31,9 +31,10 @@ dependencies:
   google_places_flutter: ^2.0.3
   dio: ^3.0.10
   air_quality: ^1.2.1+1
-  google_maps_flutter:
-  google_map_polyline:
   syncfusion_flutter_gauges: ^1.0.0-beta
+  google_maps_webservice: ^0.0.19
+  google_maps_flutter: ^2.0.1
+
   permission:
 
 dev_dependencies:

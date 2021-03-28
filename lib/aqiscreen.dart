@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_places_flutter/google_places_flutter.dart';
@@ -12,18 +11,18 @@ class aqiscreen extends StatefulWidget {
 }
 
 class _aqiscreenState extends State<aqiscreen> {
- // String _key = 'de113a567839c4ae761b35831192453ae5f57551';
+  // String _key = 'de113a567839c4ae761b35831192453ae5f57551';
   AirQuality airQuality;
 
   @override
   void initState() {
     super.initState();
-    airQuality = new AirQuality('--AQI api key--');
+    airQuality = new AirQuality('de113a567839c4ae761b35831192453ae5f57551');
   }
 
   void getData(double lat, double lon) async {
     AirQualityData feedFromGeoLocation =
-    await airQuality.feedFromGeoLocation(lat, lon);
+        await airQuality.feedFromGeoLocation(lat, lon);
     setState(() {
       aqi = feedFromGeoLocation.airQualityIndex.toString();
     });
@@ -39,41 +38,29 @@ class _aqiscreenState extends State<aqiscreen> {
     return Scaffold(
       backgroundColor: Color(0xFFffbd59),
       body: SafeArea(
-                child: Column(
-
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-
             Padding(
               padding: EdgeInsets.all(20.0),
               child: Center(
-                child: Image.network("https://i.ibb.co/X7BkM0f/1616920396411.png"),
+                child:
+                    Image.network("https://i.ibb.co/X7BkM0f/1616920396411.png"),
               ),
             ),
             Container(
-
               padding: EdgeInsets.all(20.0),
               child: GooglePlaceAutoCompleteTextField(
                   textEditingController: _controller,
-                  googleAPIKey: "--Your API key--",
+                  googleAPIKey: "AIzaSyDyCqyYlxIkhhtDAzoCgwqlfkVTwGYDIo4",
                   inputDecoration: InputDecoration(
-                    //hoverColor: Colors.black,
                     filled: true,
-                    //fillColor: Colors.black,
                     hintText: 'Enter City',
                     hintStyle: TextStyle(color: Colors.white),
                   ),
-                  debounceTime:
-                  800, // default 600 ms, // optional by default null is set
-                  isLatLngRequired:
-                  true, // if you required coordinates from place detail
+                  debounceTime: 800,
+                  isLatLngRequired: true,
                   getPlaceDetailWithLatLng: (Prediction prediction) {
-                    // this method will return latlng with place detail
-
-                    print("placeDetails " +
-                        prediction.lat.toString() +
-                        " " +
-                        prediction.lng.toString());
                     lat = double.parse(prediction.lat);
                     lon = double.parse(prediction.lng);
                     city = prediction.description;
@@ -85,84 +72,107 @@ class _aqiscreenState extends State<aqiscreen> {
                         TextPosition(offset: prediction.description.length));
                   }),
             ),
-
-
-              Container(
-               // padding: ,
-                child: SfRadialGauge(axes: <RadialAxis>[
-                      RadialAxis(startAngle : 140, endAngle : 400,  minimum: 0, maximum: 500,
-                      axisLineStyle: AxisLineStyle(thickness: 50),
-                      majorTickStyle: MajorTickStyle(length: 0,),
-                      minorTickStyle: MinorTickStyle(length: 0,),
-                      labelOffset: -60,
-
-
-                      ranges: <GaugeRange>[
-                        GaugeRange(
-                            startValue: 0,
-                            endValue: 50,
-                            color:Colors.green,
-                            startWidth: 50,
-                            endWidth: 50,
-                            label: 'good',
-                            labelStyle: GaugeTextStyle(fontSize: 11)
+            Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20,
+              ),
+              child: SfRadialGauge(
+                axes: <RadialAxis>[
+                  RadialAxis(
+                    startAngle: 140,
+                    endAngle: 400,
+                    minimum: 0,
+                    maximum: 500,
+                    axisLineStyle: AxisLineStyle(thickness: 50),
+                    majorTickStyle: MajorTickStyle(
+                      length: 0,
+                    ),
+                    minorTickStyle: MinorTickStyle(
+                      length: 0,
+                    ),
+                    labelOffset: -65,
+                    ranges: <GaugeRange>[
+                      GaugeRange(
+                        startValue: 0,
+                        endValue: 50,
+                        color: Colors.green[800],
+                        startWidth: 50,
+                        endWidth: 50,
+                        label: 'good',
+                        labelStyle: GaugeTextStyle(fontSize: 11),
+                      ),
+                      GaugeRange(
+                        startValue: 50,
+                        endValue: 100,
+                        color: Color(0xFFffff00),
+                        startWidth: 50,
+                        endWidth: 50,
+                        label: 'Moderate',
+                        labelStyle: GaugeTextStyle(fontSize: 11),
+                      ),
+                      GaugeRange(
+                        startValue: 100,
+                        endValue: 150,
+                        color: Color(0xFFff7e00),
+                        startWidth: 50,
+                        endWidth: 50,
+                        label: 'Unhealthy\nfor Sensitive\n Groups',
+                        labelStyle: GaugeTextStyle(fontSize: 11),
+                      ),
+                      GaugeRange(
+                        startValue: 150,
+                        endValue: 200,
+                        color: Color(0xFFfe0000),
+                        startWidth: 50,
+                        endWidth: 50,
+                        label: 'Unhealthy',
+                        labelStyle: GaugeTextStyle(fontSize: 11),
+                      ),
+                      GaugeRange(
+                        startValue: 200,
+                        endValue: 300,
+                        color: Color(0xFF99004c),
+                        startWidth: 50,
+                        endWidth: 50,
+                        label: 'Very Unhealthy',
+                        labelStyle: GaugeTextStyle(fontSize: 11),
+                      ),
+                      GaugeRange(
+                        startValue: 300,
+                        endValue: 500,
+                        color: Color(0xFF7e0022),
+                        startWidth: 50,
+                        endWidth: 50,
+                        label: 'Hazardous',
+                        labelStyle: GaugeTextStyle(fontSize: 11),
+                      ),
+                    ],
+                    pointers: <GaugePointer>[
+                      NeedlePointer(
+                        value: double.parse(aqi),
+                      )
+                    ],
+                    annotations: <GaugeAnnotation>[
+                      GaugeAnnotation(
+                        widget: Container(
+                          child: Text(
+                            aqi,
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
-                        GaugeRange(
-                            startValue: 50,
-                            endValue: 100,
-                            color: Colors.yellow,
-                            startWidth: 50,
-                            endWidth: 50,
-                            label: 'Moderate',
-                            labelStyle: GaugeTextStyle(fontSize: 11)
-                        ),
-                        GaugeRange(
-                            startValue: 100,
-                            endValue: 150,
-                            color: Colors.orange,
-                            startWidth: 50,endWidth: 50 ,
-                            label : 'Unhealthy\nfor Sensitive\n Groups', labelStyle: GaugeTextStyle(fontSize: 11) ),
-                        GaugeRange(
-                            startValue: 150,
-                            endValue: 200,
-                            color: Colors.red,
-                            startWidth: 50,
-                            endWidth: 50 ,
-                            label: 'Unhealthy',
-                            labelStyle: GaugeTextStyle(fontSize: 11)
-                        ),
-                        GaugeRange(
-                            startValue: 200,
-                            endValue: 300,
-                            color: Colors.pink,
-                            startWidth: 50,
-                            endWidth: 50,
-                            label: 'Very Unhealthy',
-                            labelStyle: GaugeTextStyle(fontSize: 11)
-                        ),
-                        GaugeRange(
-                            startValue: 300,
-                            endValue: 500,
-                            color: Colors.purple,
-                            startWidth: 50,
-                            endWidth: 50 ,
-                            label: 'Hazardous',
-                            labelStyle: GaugeTextStyle(fontSize: 11)
-                        ),
-                      ],
-                      pointers: <GaugePointer>[
-                        NeedlePointer(value: double.parse(aqi))],
-                      annotations: <GaugeAnnotation>[
-                        GaugeAnnotation(widget: Container(child:
-                        Text(aqi,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold))),
-                            angle: 90, positionFactor: 0.75
-                        )]
-                  )])
-          ),
-         ],
-
+                        angle: 90,
+                        positionFactor: 0.75,
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ],
         ),
-
       ),
     );
   }

@@ -37,18 +37,9 @@ class _aqiscreenState extends State<aqiscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Color(0xFFffbd59),
-      body: Container(
-        decoration: BoxDecoration(
-
-          gradient: LinearGradient(colors: [Colors.green.shade600, Colors.amber],
-              begin: Alignment.topLeft,
-
-              end:
-              Alignment.bottomCenter),
-        ),
-
-        child: Column(
+      backgroundColor: Color(0xFFffbd59),
+      body: SafeArea(
+                child: Column(
 
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -107,12 +98,57 @@ class _aqiscreenState extends State<aqiscreen> {
 
 
                       ranges: <GaugeRange>[
-                        GaugeRange(startValue: 0, endValue: 50,color:Colors.green, startWidth: 50,endWidth: 50,label: 'good', labelStyle: GaugeTextStyle(fontSize: 11)),
-                        GaugeRange(startValue: 50,endValue: 100,color: Colors.yellow,startWidth: 50,endWidth: 50,label: 'Moderate', labelStyle: GaugeTextStyle(fontSize: 11) ),
-                        GaugeRange(startValue: 100,endValue: 150,color: Colors.orange,startWidth: 50,endWidth: 50 ,label : 'Unhealthy\nfor Sensitive\n Groups', labelStyle: GaugeTextStyle(fontSize: 11) ),
-                        GaugeRange(startValue: 150,endValue: 200,color: Colors.red,startWidth: 50,endWidth: 50 ,label: 'Unhealthy', labelStyle: GaugeTextStyle(fontSize: 11)),
-                        GaugeRange(startValue: 200,endValue: 300,color: Colors.pink,startWidth: 50,endWidth: 50,label: 'Very Unhealthy', labelStyle: GaugeTextStyle(fontSize: 11) ),
-                        GaugeRange(startValue: 300,endValue: 500,color: Colors.purple,startWidth: 50,endWidth: 50 ,label: 'Hazardous', labelStyle: GaugeTextStyle(fontSize: 11)),
+                        GaugeRange(
+                            startValue: 0,
+                            endValue: 50,
+                            color:Colors.green,
+                            startWidth: 50,
+                            endWidth: 50,
+                            label: 'good',
+                            labelStyle: GaugeTextStyle(fontSize: 11)
+                        ),
+                        GaugeRange(
+                            startValue: 50,
+                            endValue: 100,
+                            color: Colors.yellow,
+                            startWidth: 50,
+                            endWidth: 50,
+                            label: 'Moderate',
+                            labelStyle: GaugeTextStyle(fontSize: 11)
+                        ),
+                        GaugeRange(
+                            startValue: 100,
+                            endValue: 150,
+                            color: Colors.orange,
+                            startWidth: 50,endWidth: 50 ,
+                            label : 'Unhealthy\nfor Sensitive\n Groups', labelStyle: GaugeTextStyle(fontSize: 11) ),
+                        GaugeRange(
+                            startValue: 150,
+                            endValue: 200,
+                            color: Colors.red,
+                            startWidth: 50,
+                            endWidth: 50 ,
+                            label: 'Unhealthy',
+                            labelStyle: GaugeTextStyle(fontSize: 11)
+                        ),
+                        GaugeRange(
+                            startValue: 200,
+                            endValue: 300,
+                            color: Colors.pink,
+                            startWidth: 50,
+                            endWidth: 50,
+                            label: 'Very Unhealthy',
+                            labelStyle: GaugeTextStyle(fontSize: 11)
+                        ),
+                        GaugeRange(
+                            startValue: 300,
+                            endValue: 500,
+                            color: Colors.purple,
+                            startWidth: 50,
+                            endWidth: 50 ,
+                            label: 'Hazardous',
+                            labelStyle: GaugeTextStyle(fontSize: 11)
+                        ),
                       ],
                       pointers: <GaugePointer>[
                         NeedlePointer(value: double.parse(aqi))],

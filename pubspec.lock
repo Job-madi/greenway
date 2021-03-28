@@ -130,6 +130,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.1.4"
+  intl:
+    dependency: transitive
+    description:
+      name: intl
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.16.1"
   matcher:
     dependency: transitive
     description:
@@ -158,12 +165,12 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.9.2"
-  permission:
-    dependency: "direct main"
-    description:
-      name: permission
-      url: "https://pub.dartlang.org"
-    source: hosted
+  permission:	
+    dependency: "direct main"	
+    description:	
+      name: permission	
+      url: "https://pub.dartlang.org"	
+    source: hosted	
     version: "0.1.7"
   plugin_platform_interface:
     dependency: transitive
@@ -219,6 +226,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0-nullsafety.1"
+  syncfusion_flutter_gauges:
+    dependency: "direct main"
+    description:
+      name: syncfusion_flutter_gauges
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0-beta"
   term_glyph:
     dependency: transitive
     description:

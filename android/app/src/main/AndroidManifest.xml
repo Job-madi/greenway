@@ -9,6 +9,13 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="greenway"
         android:icon="@mipmap/ic_launcher">
+
+       <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyBXM9e9oKVFo1mcXEtidvG89h_MDwL-bxg"/>
+
+
+
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

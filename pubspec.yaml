@@ -33,6 +33,7 @@ dependencies:
   air_quality: ^1.2.1+1
   google_maps_flutter:
   google_map_polyline:
+  permission:
 
 dev_dependencies:
   flutter_test:
